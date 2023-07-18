@@ -20,6 +20,7 @@ vector<int> parseInt(string str)
     }
     return a;
 }
+
 int main()
 {
     string str;
