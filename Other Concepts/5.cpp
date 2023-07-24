@@ -43,7 +43,19 @@ Available_Workshops * initialize(int start_time[],int duration[],int num)
 }
 int CalculateMaxWorkshops(Available_Workshops *test)
 {
-    int w_count=1;
+    int count=0;
+    int end=0;
+    for(int i=0;i<test->n;i++)
+    {
+        if(test->vec.at(i).start_time>=end)
+        {
+            end=test->vec.at(i).end_time;
+            count++;
+        }
+    }
+    return count;
+
+   /* int w_count=1;
     int test_end_time=test->vec.at(0).end_time;
     for(int i=1;i<test->n;i++)
     {
@@ -53,7 +65,7 @@ int CalculateMaxWorkshops(Available_Workshops *test)
             test_end_time=test->vec.at(i).end_time;
         }
     }
-    return w_count;
+    return w_count;*/
 }
 
 int main(int argc, char *argv[]) {
